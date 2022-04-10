@@ -31,8 +31,8 @@ module.exports = {
 
                 const Bilhete = {
                     id: Math.floor(Math.random() * 1000),
-                    resultado: list,
-                    data: new Date().toLocaleString()
+                    resultado: list.toString(),
+                    data: new Date().toLocaleString('pt-BR')
                 };
                 
                 bilhete.push(Bilhete);

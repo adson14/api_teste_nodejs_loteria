@@ -1,17 +1,22 @@
 {
   "name": "teste",
   "version": "1.0.0",
-  "description": "",
+  "description": "Api para sorteio de bilhetes",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/adson14/api_teste_nodejs_loteria.git"
+  },
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "start": "node index.js"
+    "start": "nodemon -L --inspect=0.0.0.0 index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "jest": "^27.5.1",
+    "nodemon": "^2.0.15",
     "supertest": "^6.2.2"
   }
 }

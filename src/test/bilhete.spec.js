@@ -34,7 +34,7 @@ describe('Busca de bilhetes', () => {
     })
 
     it('Nenhum bilhete retornado', async () => {
-        var restart = await res.get('/restart') 
+        var restart = await res.post('/restart') 
         var bilhetes = await res.get('/bilhete')       
         expect((bilhetes.body).length).toEqual(0)
     })
@@ -49,7 +49,7 @@ describe('Busca bilhete por ID', () => {
     })
 
     it('Bilhete não retornado', async () => {
-        var restart = await res.get('/restart') 
+        var restart = await res.post('/restart') 
         var bilhete = await res.get('/bilhete/'+bilheteid)       
         expect((bilhete.body).length).toEqual(0)
     })

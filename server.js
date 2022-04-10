@@ -6,6 +6,8 @@ const routes = require('./src/routes');
 
 const server = http.createServer((request, response) => {
 
+   response.setHeader("Access-Control-Allow-Origin", "http://localhost:8000");
+   
    const parsedUrl = url.parse(request.url, true);
 
    let { pathname } = parsedUrl;

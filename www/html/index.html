@@ -1,0 +1,46 @@
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Loteria</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<body>
+    <div id="main">
+
+    </div>
+</body>
+
+<script>
+    async function getBilhetes(){
+
+        try {
+            const response = await fetch('http://localhost:3000/bilhete')
+            const data = await response.json()
+            showData(data)
+        } catch (error) {
+            console.error(error)
+        }
+    }
+
+    getBilhetes()
+
+    function showData(data){
+        let output = '<table border="1px">'
+        output += '<thead><tr><th>Código</th><th>Sorteadas</th><th>Data</th></tr></thead>'    
+        output += '<tbody>'    
+
+        for(let bilhete of data){
+            output += '<tr>'  
+            output += `<td>${bilhete.id}</td>`
+            output += `<td>${bilhete.resultado}</td>`
+            output += `<td>${bilhete.data}</td>`
+            output += '</tr>'    
+        }
+
+        output += '</tbody>'   
+        const el = document.getElementById('main');
+        el.innerHTML = output
+    }
+</script>
+</html>

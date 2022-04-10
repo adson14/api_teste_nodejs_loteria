@@ -24,7 +24,7 @@ const {create,read, premiacao, readById, restart } = require("./controllers/Bilh
      },     
      {
         endpoint: '/restart',
-        method : 'GET',
+        method : 'POST',
         handler: restart,
      },
 
